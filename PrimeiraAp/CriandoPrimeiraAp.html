@@ -1,8 +1,14 @@
 <div id="app">
     <!-- {{ Interpolação de string}} -->
-    <p>{{ mensagem }}</p>
+    <p>{{mensagem}}</p>
+
+    <!-- "Escrevendo o nome em tempo real"-->
+    <p>Meu nome é: {{nome}}</p>
+    <input v-on:input="mudarNome">
+
 </div>
 
+<!-- Import Vue -->
 <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
 
 <script>
@@ -11,8 +17,15 @@
         el: '#app',
 
         data: {
-            // Novas propriedades
+            // Novas propriedades de data
             mensagem: 'Olá vueJS!',
+            nome: ''
+        },
+        methods: {
+            // Objeto JS 
+            mudarNome: function(event) {
+                this.nome = event.target.value;
+            }
         },
     });
 </script>
