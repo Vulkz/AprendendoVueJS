@@ -1,31 +1,41 @@
-<div id="app">
-    <!-- {{ Interpolação de string}} -->
-    <p>{{mensagem}}</p>
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- "Escrevendo o nome em tempo real"-->
-    <p>Meu nome é: {{nome}}</p>
-    <input v-on:input="mudarNome">
+<head>
+    <title>VueJS</title>
+    <!-- Import Vue -->
+    <script type="text/javascript" src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+</head>
 
-</div>
+<body>
+    <div id="app">
+        <!-- {{ Interpolação de string}} -->
+        <p>{{mensagem}}</p>
 
-<!-- Import Vue -->
-<script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+        <!-- "Escrevendo o nome em tempo real"-->
+        <p>Meu nome é: {{nome}}</p>
+        <input v-on:input="mudarNome">
+    </div>
 
-<script>
-    new Vue({
-        // "Linkando" a instância do Vue com o elemento "<div id="app">"
-        el: '#app',
+    <script type="text/javascript">
+        new Vue({
+            // "Linkando" a instância do Vue com o elemento "<div id="app">"
+            el: '#app',
 
-        data: {
-            // Novas propriedades de data
-            mensagem: 'Olá vueJS!',
-            nome: ''
-        },
-        methods: {
-            // Objeto JS 
-            mudarNome: function(event) {
-                this.nome = event.target.value;
-            }
-        },
-    });
-</script>
+            data: {
+                // Novas propriedades de data
+                mensagem: 'Olá vueJS!',
+                nome: ''
+            },
+            methods: {
+                // Objeto JS 
+                mudarNome: function(event) {
+                    this.nome = event.target.value;
+                }
+            },
+        });
+    </script>
+
+</body>
+
+</html>
