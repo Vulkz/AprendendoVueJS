@@ -1,4 +1,5 @@
 <div id="app">
+    <!-- {{ Interpolação de string}} -->
     <p>{{ mensagem }}</p>
 </div>
 
@@ -6,8 +7,11 @@
 
 <script>
     new Vue({
+        // "Linkando" a instância do Vue com o elemento "<div id="app">"
         el: '#app',
+
         data: {
+            // Novas propriedades
             mensagem: 'Olá vueJS!',
         },
     });
