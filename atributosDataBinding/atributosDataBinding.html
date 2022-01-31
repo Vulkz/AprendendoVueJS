@@ -8,22 +8,18 @@
 
 <body>
     <div id="app">
-        <p>Curso: {{curso()}}</p>
+        <!-- para fazer um data binding de atributos utiliza-se v-bind: -->
+        <a v-bind:href="docs">VueJS</a>
     </div>
 
     <script type="text/javascript">
         new Vue({
             el: '#app',
+
             data: {
-                nomeDoCurso: "VueJs"
+                docs: 'https://vuejs.org',
             },
-            methods: {
-                curso: function() {
-                    // this. -> está acessando "nomeDoCurso" internamente
-                    return this.nomeDoCurso;
-                }
-            }
-        })
+        });
     </script>
 </body>
 
