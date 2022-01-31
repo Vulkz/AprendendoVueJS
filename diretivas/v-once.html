@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VueJs</title>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-once faz o elemento e seus "filhos" serem renderizados apenas uma vez -->
+        <p v-once>Nome completo: {{ nome }}</p>
+        <p>Nome {{ pegarNome() }}</p>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                nome: "Gabriel Costa",
+            },
+            methods: {
+                pegarNome: function() {
+                    this.nome = 'Gabriel'
+                    return this.nome
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
