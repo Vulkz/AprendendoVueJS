@@ -8,24 +8,26 @@
 
 <body>
     <div id="app">
-        <!-- v-once faz o elemento e seus "filhos" serem renderizados apenas uma vez  -->
-        <p v-once>Nome completo: {{ nome }}</p>
-        <p>Nome {{ pegarNome() }}</p>
+
+        <button v-on:click="incrementar">Clique</button>
+        <p>Botão clicaldo {{cliques}} vezes</p>
+
     </div>
+
     <script type="text/javascript">
         new Vue({
             el: '#app',
             data: {
-                nome: "Gabriel Costa",
+                cliques: 0,
             },
             methods: {
-                pegarNome: function() {
-                    this.nome = 'Gabriel'
-                    return this.nome
-                },
+                incrementar: function() {
+                    return this.cliques++
+                }
             },
         });
     </script>
+
 </body>
 
 </html>
